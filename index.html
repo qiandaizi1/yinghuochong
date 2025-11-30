@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>合肥萤火之光科技有限公司 - 官方网站</title>
+    <meta name="description" content="合肥萤火之光科技，专注互联网慈善、网络互助与抖音直播MCN运营，致力于科技向善。">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入 Font Awesome 图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* 字体优化 */
+        body { font-family: 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+        /* 萤火主题色定义 */
+        .bg-firefly-dark { background-color: #1a202c; }
+        .bg-firefly-gold { background-color: #F59E0B; }
+        .text-firefly-gold { color: #F59E0B; }
+        
+        /* 模拟视差滚动背景 */
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        /* 导航栏下拉效果 */
+        .group:hover .group-hover\:block { display: block; }
+    </style>
+</head>
+<body class="text-gray-700 bg-white">
+
+    <!-- 顶部极简通栏 (Top Bar) -->
+    <div class="bg-gray-900 text-gray-400 text-xs py-2 hidden md:block">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="flex space-x-4">
+                <span><i class="fas fa-phone-alt mr-1"></i> 400-888-XXXX (全国服务热线)</span>
+                <span><i class="fas fa-envelope mr-1"></i> service@firefly-tech.com</span>
+            </div>
+            <div class="flex space-x-4">
+                <a href="#" class="hover:text-white transition">投资者关系</a>
+                <span class="border-r border-gray-700"></span>
+                <a href="#" class="hover:text-white transition">企业内网</a>
+                <span class="border-r border-gray-700"></span>
+                <a href="#" class="hover:text-white transition">EN</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 导航栏 (Header) -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="text-3xl font-extrabold text-gray-800 tracking-wide">
+                        <span class="text-firefly-gold"><i class="fas fa-lightbulb"></i> 萤火</span>之光
+                    </div>
+                    <div class="hidden lg:block ml-4 pl-4 border-l border-gray-300 text-xs text-gray-500 uppercase tracking-widest">
+                        Firefly Light Tech
+                    </div>
+                </div>
+
+                <!-- 菜单 (Menu) -->
+                <div class="hidden md:flex space-x-8 h-full items-center">
+                    <a href="#" class="font-bold text-gray-800 hover:text-firefly-gold h-full flex items-center border-b-2 border-transparent hover:border-firefly-gold transition">首页</a>
+                    
+                    <!-- 下拉菜单示例：走进萤火 -->
+                    <div class="group relative h-full flex items-center">
+                        <a href="#" class="font-medium text-gray-600 hover:text-firefly-gold flex items-center">走进萤火 <i class="fas fa-chevron-down ml-1 text-xs"></i></a>
+                        <div class="hidden group-hover:block absolute top-full left-0 w-48 bg-white shadow-xl py-2 rounded-b-lg border-t-2 border-firefly-gold">
+                            <a href="#about" class="block px-4 py-2 hover:bg-gray-50 hover:text-firefly-gold">集团简介</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-50 hover:text-firefly-gold">董事长致辞</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-50 hover:text-firefly-gold">企业文化</a>
+                        </div>
+                    </div>
+
+                    <!-- 下拉菜单示例：核心业务 -->
+                    <div class="group relative h-full flex items-center">
+                        <a href="#business" class="font-medium text-gray-600 hover:text-firefly-gold flex items-center">产业生态 <i class="fas fa-chevron-down ml-1 text-xs"></i></a>
+                        <div class="hidden group-hover:block absolute top-full left-0 w-56 bg-white shadow-xl py-2 rounded-b-lg border-t-2 border-firefly-gold">
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-50 hover:text-firefly-gold"><i class="fab fa-tiktok mr-2"></i> 抖音直播MCN</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-50 hover:text-firefly-gold"><i class="fas fa-hands-helping mr-2"></i> 智慧互助平台</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-50 hover:text-firefly-gold"><i class="fas fa-seedling mr-2"></i> 乡村振兴项目</a>
+                        </div>
+                    </div>
+
+                    <a href="#charity" class="font-medium text-gray-600 hover:text-firefly-gold transition">公益中心</a>
+                    <a href="#news" class="font-medium text-gray-600 hover:text-firefly-gold transition">新闻动态</a>
+                </div>
+
+                <!-- 右侧按钮 -->
+                <div class="hidden md:flex items-center">
+                    <a href="#contact" class="bg-firefly-gold text-white px-6 py-2 rounded hover:bg-yellow-600 transition shadow-md">
+                        <i class="fas fa-handshake mr-1"></i> 合作咨询
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section (轮播图区域模拟) -->
+    <header class="relative h-[600px] flex items-center overflow-hidden">
+        <!-- 背景图片 -->
+        <div class="absolute inset-0 bg-gray-900">
+            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Tech Background" class="w-full h-full object-cover opacity-40">
+            <div class="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/80 to-transparent"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+                <span class="text-firefly-gold font-bold tracking-widest uppercase mb-4 block">Technology For Good</span>
+                <h1 class="text-5xl md:text-6xl font-bold text-white leading-tight mb-6">
+                    汇聚微光 <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">点亮无限希望</span>
+                </h1>
+                <p class="text-gray-300 text-lg mb-8 leading-relaxed">
+                    合肥萤火之光，致力于构建“数字科技+公益直播+社群互助”的创新生态圈。我们用流量连接山海，用技术传递温度，打造中国领先的社会型科技企业。
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#" class="bg-firefly-gold text-white px-8 py-4 rounded font-bold hover:bg-yellow-600 transition shadow-lg transform hover:-translate-y-1">
+                        探索业务体系
+                    </a>
+                    <a href="#" class="border border-gray-400 text-white px-8 py-4 rounded font-bold hover:bg-white hover:text-gray-900 transition">
+                        观看企业宣传片 <i class="fas fa-play ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- 右侧可以放一个浮动的3D元素或者数据图，这里留空 -->
+        </div>
+    </header>
+
+    <!-- 数据驾驶舱 (Stats) -->
+    <section class="bg-gray-100 py-12 border-b border-gray-200">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-gray-300">
+                <div class="p-4">
+                    <div class="text-4xl font-extrabold text-gray-800 mb-2">5,000<span class="text-firefly-gold text-2xl">+</span></div>
+                    <div class="text-gray-500 uppercase text-sm tracking-wide">签约合作达人</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl font-extrabold text-gray-800 mb-2">3.5<span class="text-firefly-gold text-2xl">亿</span></div>
+                    <div class="text-gray-500 uppercase text-sm tracking-wide">累计直播曝光量</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl font-extrabold text-gray-800 mb-2">120<span class="text-firefly-gold text-2xl">万</span></div>
+                    <div class="text-gray-500 uppercase text-sm tracking-wide">互助社群会员</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl font-extrabold text-gray-800 mb-2">100<span class="text-firefly-gold text-2xl">%</span></div>
+                    <div class="text-gray-500 uppercase text-sm tracking-wide">公益账目透明度</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 集团简介 (About - 左右图文布局) -->
+    <section id="about" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2 relative">
+                    <!-- 图片叠加效果 -->
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Team" class="rounded-lg shadow-2xl z-10 relative">
+                    <div class="absolute -bottom-10 -right-10 bg-firefly-gold w-64 h-64 rounded-full opacity-20 -z-0"></div>
+                    <div class="absolute -top-10 -left-10 w-32 h-32 border-4 border-gray-100 rounded-lg -z-0"></div>
+                </div>
+                <div class="lg:w-1/2">
+                    <div class="flex items-center mb-6">
+                        <span class="w-12 h-1 bg-firefly-gold mr-4"></span>
+                        <span class="text-gray-500 font-bold uppercase tracking-widest">About Us</span>
+                    </div>
+                    <h2 class="text-4xl font-bold text-gray-900 mb-6">科技向善，<br>做有温度的互联网企业</h2>
+                    <p class="text-gray-600 leading-relaxed mb-6 text-justify">
+                        合肥萤火之光科技有限公司坐落于科教名城合肥，是一家将“商业逻辑”与“社会价值”深度融合的创新型企业。不同于传统互联网公司，我们的每一个代码、每一次直播、每一场活动，都致力于解决社会痛点。
+                    </p>
+                    <p class="text-gray-600 leading-relaxed mb-8 text-justify">
+                        我们构建了以**“抖音数字直播”**为核心的造血机制，反哺**“全民互助社群”**与**“慈善公益项目”**。通过技术手段，让农产品走出大山，让患病家庭获得救助，让爱心流转透明可见。
+                    </p>
+                    
+                    <ul class="grid grid-cols-2 gap-4 mb-8">
+                        <li class="flex items-center text-gray-700 font-medium"><i class="fas fa-check-circle text-firefly-gold mr-3"></i> 5G直播基地</li>
+                        <li class="flex items-center text-gray-700 font-medium"><i class="fas fa-check-circle text-firefly-gold mr-3"></i> 区块链互助系统</li>
+                        <li class="flex items-center text-gray-700 font-medium"><i class="fas fa-check-circle text-firefly-gold mr-3"></i> 乡村振兴合伙人</li>
+                        <li class="flex items-center text-gray-700 font-medium"><i class="fas fa-check-circle text-firefly-gold mr-3"></i> 慈善组织孵化</li>
+                    </ul>
+
+                    <a href="#" class="text-firefly-gold font-bold hover:underline">查看更多企业故事 &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心业务体系 (Business - 卡片式布局) -->
+    <section id="business" class="py-24 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">三大核心业务生态</h2>
+                <p class="text-gray-500 text-lg">构建“造血+输血+活血”的完整闭环，让每一份善意都有迹可循。</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- 业务 1 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Live Streaming" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-10 transition"></div>
+                        <div class="absolute top-4 right-4 bg-firefly-gold text-white text-xs px-2 py-1 rounded">MCN矩阵</div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-3 group-hover:text-firefly-gold transition">抖音直播电商</h3>
+                        <p class="text-gray-600 mb-6 text-sm leading-relaxed">
+                            专注于“正能量”内容赛道。提供品牌全案代运营、达人孵化、乡村振兴助农专场。我们不制造焦虑，只传递美好生活，用流量变现支持公益事业。
+                        </p>
+                        <a href="#" class="inline-block text-gray-800 font-bold hover:text-firefly-gold text-sm border-b-2 border-gray-200 hover:border-firefly-gold transition pb-1">了解合作方案</a>
+                    </div>
+                </div>
+
+                <!-- 业务 2 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Mutual Aid" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                        <div class="absolute top-4 right-4 bg-blue-500 text-white text-xs px-2 py-1 rounded">社群互助</div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-3 group-hover:text-blue-600 transition">智慧互助平台</h3>
+                        <p class="text-gray-600 mb-6 text-sm leading-relaxed">
+                            基于大数据的网络互助社群。会员预存小额资金，当有人患大病时，由全体会员均摊互助金。全流程区块链存证，第三方公估介入，确保公平公正。
+                        </p>
+                        <a href="#" class="inline-block text-gray-800 font-bold hover:text-blue-600 text-sm border-b-2 border-gray-200 hover:border-blue-600 transition pb-1">查看互助规则</a>
+                    </div>
+                </div>
+
+                <!-- 业务 3 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Charity" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                        <div class="absolute top-4 right-4 bg-red-500 text-white text-xs px-2 py-1 rounded">公益慈善</div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-3 group-hover:text-red-500 transition">萤火公益计划</h3>
+                        <p class="text-gray-600 mb-6 text-sm leading-relaxed">
+                            联合多家基金会发起的公益项目。关注留守儿童教育、孤寡老人关怀及残障人士就业。我们将直播收益的一部分定向捐赠，并定期组织线下志愿服务。
+                        </p>
+                        <a href="#" class="inline-block text-gray-800 font-bold hover:text-red-500 text-sm border-b-2 border-gray-200 hover:border-red-500 transition pb-1">查看公示信息</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 公益视差滚动 (CSR) -->
+    <section id="charity" class="parallax py-32 relative" style="background-image: url('https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');">
+        <div class="absolute inset-0 bg-gray-900 opacity-70"></div>
+        <div class="container mx-auto px-6 relative z-10 text-center text-white">
+            <h2 class="text-4xl font-bold mb-6">让每一分钱都花在刀刃上</h2>
+            <p class="text-xl max-w-2xl mx-auto mb-10 text-gray-200">
+                我们承诺：公益项目运营成本由公司单独承担，不从善款中提取管理费。
+                <br>点击下方查看最新的财务审计报告。
+            </p>
+            <div class="flex justify-center gap-6">
+                <button class="bg-transparent border-2 border-white px-8 py-3 rounded-full hover:bg-white hover:text-gray-900 transition font-bold">2023年度报告</button>
+                <button class="bg-firefly-gold px-8 py-3 rounded-full hover:bg-yellow-600 transition font-bold text-white border-2 border-transparent">我要捐赠</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 新闻资讯 (News - 列表布局) -->
+    <section id="news" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900">萤火动态</h2>
+                    <p class="text-gray-500 mt-2">了解我们的最新步伐与行业见解</p>
+                </div>
+                <a href="#" class="text-firefly-gold hover:text-yellow-600 font-medium">查看全部 &rarr;</a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- 左侧大图新闻 -->
+                <div class="group cursor-pointer">
+                    <div class="overflow-hidden rounded-xl mb-4">
+                        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="News" class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="text-sm text-gray-400 mb-2">2023年10月24日 | 公司新闻</div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-3 group-hover:text-firefly-gold transition">萤火之光启动“暖冬行动”，百位主播接力助农</h3>
+                    <p class="text-gray-600 line-clamp-3">
+                        为解决安徽周边地区冬季农产品滞销问题，合肥萤火之光科技有限公司联合抖音平台，发起了为期一周的“暖冬助农”直播专场活动。活动期间，累计销售红薯、柑橘等农产品...
+                    </p>
+                </div>
+
+                <!-- 右侧新闻列表 -->
+                <div class="space-y-8">
+                    <div class="flex gap-4 group cursor-pointer border-b border-gray-100 pb-6">
+                        <div class="w-24 h-24 flex-shrink-0 bg-gray-200 rounded-lg overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1577563908411-5077b6dc7624?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <div class="text-xs text-gray-400 mb-1">2023年09月15日</div>
+                            <h4 class="text-lg font-bold text-gray-800 mb-2 group-hover:text-firefly-gold transition">科技赋能公益：互助平台2.0版本正式上线</h4>
+                            <p class="text-sm text-gray-500 line-clamp-2">全新升级区块链存证技术，让每一笔互助金的流转都可追溯、可查询，进一步提升平台公信力。</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4 group cursor-pointer border-b border-gray-100 pb-6">
+                        <div class="w-24 h-24 flex-shrink-0 bg-gray-200 rounded-lg overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <div class="text-xs text-gray-400 mb-1">2023年08月20日</div>
+                            <h4 class="text-lg font-bold text-gray-800 mb-2 group-hover:text-firefly-gold transition">合肥萤火之光荣获“年度社会责任先锋企业”称号</h4>
+                            <p class="text-sm text-gray-500 line-clamp-2">在近日举办的互联网公益峰会上，我司凭借创新的“直播+公益”模式，荣获组委会颁发的大奖。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-4 group cursor-pointer">
+                        <div class="w-24 h-24 flex-shrink-0 bg-gray-200 rounded-lg overflow-hidden">
+                             <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <div class="text-xs text-gray-400 mb-1">2023年07月05日</div>
+                            <h4 class="text-lg font-bold text-gray-800 mb-2 group-hover:text-firefly-gold transition">招募令：寻找100位乡村守护人</h4>
+                            <p class="text-sm text-gray-500 line-clamp-2">我们正在寻找有志于乡村振兴的青年才俊，提供全方位的直播培训与流量扶持。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我们 (Contact - 复杂表单与地图) -->
+    <section id="contact" class="py-24 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row">
+                <!-- 左侧信息 -->
+                <div class="md:w-5/12 bg-gray-900 p-12 text-white flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-3xl font-bold mb-6">联系我们</h3>
+                        <p class="text-gray-400 mb-10">无论是商务合作、公益对接，还是加入我们，欢迎随时联系。</p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt mt-1 mr-4 text-firefly-gold"></i>
+                                <div>
+                                    <h5 class="font-bold text-lg">总部地址</h5>
+                                    <p class="text-gray-400 text-sm">安徽省合肥市高新区XX大道XX号<br>创新产业园A座18层</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-phone mt-1 mr-4 text-firefly-gold"></i>
+                                <div>
+                                    <h5 class="font-bold text-lg">联系电话</h5>
+                                    <p class="text-gray-400 text-sm">0551-6666XXXX (总机)<br>186-XXXX-XXXX (商务)</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-envelope mt-1 mr-4 text-firefly-gold"></i>
+                                <div>
+                                    <h5 class="font-bold text-lg">电子邮箱</h5>
+                                    <p class="text-gray-400 text-sm">bd@firefly-tech.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-12">
+                        <p class="text-sm text-gray-500 mb-4">关注我们的社交媒体</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-firefly-gold transition"><i class="fab fa-weixin"></i></a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-firefly-gold transition"><i class="fab fa-tiktok"></i></a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-firefly-gold transition"><i class="fab fa-weibo"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 右侧表单 -->
+                <div class="md:w-7/12 p-12">
+                    <form>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-2">您的姓名</label>
+                                <input type="text" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded focus:outline-none focus:border-firefly-gold transition">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-2">联系电话</label>
+                                <input type="text" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded focus:outline-none focus:border-firefly-gold transition">
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-sm font-bold text-gray-700 mb-2">合作类型</label>
+                            <select class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded focus:outline-none focus:border-firefly-gold transition">
+                                <option>直播带货合作</option>
+                                <option>公益项目对接</option>
+                                <option>申请加入互助</option>
+                                <option>应聘求职</option>
+                                <option>其他</option>
+                            </select>
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-sm font-bold text-gray-700 mb-2">留言内容</label>
+                            <textarea rows="4" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded focus:outline-none focus:border-firefly-gold transition"></textarea>
+                        </div>
+                        <button class="w-full bg-gray-900 text-white font-bold py-4 rounded hover:bg-gray-800 transition shadow-lg">发送信息</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 (Footer - 多列复杂结构) -->
+    <footer class="bg-gray-900 text-white border-t border-gray-800 pt-16 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <!-- 列1：品牌 -->
+                <div>
+                    <h4 class="text-2xl font-bold mb-6 text-firefly-gold"><i class="fas fa-lightbulb"></i> 萤火之光</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        致力成为中国最具温度的科技公司。用技术链接善意，用直播点亮希望。
+                    </p>
+                    <div class="text-xs text-gray-500">
+                        &copy; 2023 Hefei Firefly Light Tech Co., Ltd. <br>All Rights Reserved.
+                    </div>
+                </div>
+                
+                <!-- 列2：快速链接 -->
+                <div>
+                    <h5 class="text-lg font-bold mb-6">快速链接</h5>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-firefly-gold transition">关于集团</a></li>
+                        <li><a href="#" class="hover:text-firefly-gold transition">直播生态</a></li>
+                        <li><a href="#" class="hover:text-firefly-gold transition">互助公示</a></li>
+                        <li><a href="#" class="hover:text-firefly-gold transition">新闻中心</a></li>
+                        <li><a href="#" class="hover:text-firefly-gold transition">诚聘英才</a></li>
+                    </ul>
+                </div>
+
+                <!-- 列3：法律条款 -->
+                <div>
+                    <h5 class="text-lg font-bold mb-6">合规与隐私</h5>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-firefly-gold transition">用户服务协议</a></li>
+                        <li><a href="#" class="hover:text-firefly-gold transition">隐私保护政策</a></li>
+                        <li><a href="#" class="hover:text-firefly-gold transition">互助计划公约</a></li>
+                        <li><a href="#" class="hover:text-firefly-gold transition">慈善募捐资质公示</a></li>
+                        <li><a href="#" class="hover:text-firefly-gold transition">营业执照</a></li>
+                    </ul>
+                </div>
+
+                <!-- 列4：二维码 -->
+                <div>
+                    <h5 class="text-lg font-bold mb-6">关注我们</h5>
+                    <div class="flex gap-4">
+                        <div class="text-center">
+                            <div class="w-24 h-24 bg-white rounded p-1 mb-2">
+                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=Douyin" alt="抖音二维码" class="w-full h-full">
+                            </div>
+                            <span class="text-xs text-gray-400">官方抖音号</span>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-24 h-24 bg-white rounded p-1 mb-2">
+                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=WeChat" alt="公众号二维码" class="w-full h-full">
+                            </div>
+                            <span class="text-xs text-gray-400">官方公众号</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-xs text-gray-500">
+                <p>皖ICP备XXXXXXXX号-1 | 皖公网安备 XXXXXXXXXXXXXX号</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
