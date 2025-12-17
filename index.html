@@ -1,475 +1,1282 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>合肥萤火之光科技有限公司 - 官方网站</title>
-    <meta name="description" content="合肥萤火之光科技，专注互联网慈善、网络互助与抖音直播MCN运营，致力于科技向善。">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- 引入 Font Awesome 图标库 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        /* 字体优化 */
-        body { font-family: 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
-        /* 萤火主题色定义 */
-        .bg-firefly-dark { background-color: #1a202c; }
-        .bg-firefly-gold { background-color: #F59E0B; }
-        .text-firefly-gold { color: #F59E0B; }
-        
-        /* 模拟视差滚动背景 */
-        .parallax {
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-        
-        /* 导航栏下拉效果 */
-        .group:hover .group-hover\:block { display: block; }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+  <meta name="description" content="合肥萤火之光有限公司官方网站：关注困境儿童、重大疾病家庭、独居老人及突发困难人群，提供及时、透明、长期的公益支持。" />
+  <title>合肥萤火之光有限公司｜官方网站</title>
+
+  <style>
+    :root{
+      --bg: #0b1220;
+      --card: rgba(255,255,255,.06);
+      --card2: rgba(255,255,255,.10);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.72);
+      --muted2: rgba(255,255,255,.55);
+      --line: rgba(255,255,255,.12);
+      --accent: #ffd37a;
+      --accent2:#7ae2ff;
+      --good:#7CFFB2;
+      --shadow: 0 18px 60px rgba(0,0,0,.35);
+      --radius: 18px;
+      --radius2: 28px;
+      --max: 1120px;
+    }
+
+    *{ box-sizing: border-box; }
+    html{ scroll-behavior: smooth; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "PingFang SC","Hiragino Sans GB","Microsoft YaHei", Arial, "Noto Sans CJK SC", "Noto Sans", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(1200px 800px at 10% 10%, rgba(122,226,255,.12), transparent 55%),
+        radial-gradient(900px 700px at 80% 20%, rgba(255,211,122,.12), transparent 55%),
+        radial-gradient(900px 700px at 60% 90%, rgba(124,255,178,.08), transparent 55%),
+        linear-gradient(180deg, #070b14 0%, #0b1220 55%, #070b14 100%);
+      min-height:100vh;
+      overflow-x: hidden; /* 防止移动端横向溢出 */
+    }
+
+    a{ color: inherit; text-decoration: none; -webkit-tap-highlight-color: transparent; }
+    .container{ max-width: var(--max); margin:0 auto; padding: 0 24px; }
+
+    /* Header */
+    header{
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      background: rgba(7,11,20,.65);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 14px 0;
+      gap: 18px;
+    }
+    .brand{
+      display:flex; align-items:center; gap: 10px;
+      min-width: 220px;
+      flex-shrink: 0;
+    }
+    .logo{
+      width: 38px; height: 38px; border-radius: 12px;
+      background:
+        radial-gradient(12px 12px at 28% 28%, rgba(255,255,255,.95), rgba(255,255,255,.2) 60%, transparent 70%),
+        radial-gradient(18px 18px at 70% 62%, rgba(255,211,122,.90), rgba(255,211,122,.08) 70%, transparent 75%),
+        radial-gradient(26px 26px at 40% 78%, rgba(122,226,255,.55), transparent 65%),
+        linear-gradient(140deg, rgba(255,211,122,.20), rgba(122,226,255,.18));
+      box-shadow: 0 10px 30px rgba(255,211,122,.10);
+      border: 1px solid rgba(255,255,255,.16);
+      flex-shrink: 0;
+    }
+    .brand strong{ display:block; font-weight: 760; letter-spacing:.3px; font-size: 15px;}
+    .brand span{ display:block; font-size: 12px; color: var(--muted2); margin-top: 2px; }
+
+    nav ul{ list-style:none; display:flex; gap: 16px; margin:0; padding:0; flex-wrap: wrap; }
+    nav a{
+      font-size: 14px; color: var(--muted);
+      padding: 8px 10px;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      transition: .2s ease;
+      display:inline-flex; align-items:center; gap:8px;
+    }
+    nav a:hover{
+      color: var(--text);
+      background: rgba(255,255,255,.06);
+      border-color: rgba(255,255,255,.10);
+    }
+
+    .actions{ display:flex; gap: 10px; align-items:center; }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap: 10px;
+      padding: 10px 16px;
+      font-size: 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      cursor:pointer;
+      transition: .2s ease;
+      user-select:none;
+      white-space: nowrap;
+    }
+    .btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.09); }
+    .btn.primary{
+      border-color: rgba(255,211,122,.35);
+      background: linear-gradient(135deg, rgba(255,211,122,.20), rgba(122,226,255,.14));
+      box-shadow: 0 16px 46px rgba(255,211,122,.10);
+      color: #0b1220;
+      font-weight: 600;
+    }
+
+    .hamburger{
+      display:none;
+      width: 40px; height: 40px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      cursor:pointer;
+      flex-shrink: 0;
+    }
+    .hamburger:before{
+      content:"";
+      display:block;
+      width:18px; height:2px; background: rgba(255,255,255,.86);
+      margin: 0 auto;
+      box-shadow: 0 6px 0 rgba(255,255,255,.70), 0 -6px 0 rgba(255,255,255,.70);
+    }
+
+    /* Mobile menu */
+    .mobile{
+      display:none;
+      border-top: 1px solid var(--line);
+      padding: 12px 0 16px;
+      animation: slideDown 0.3s ease-out;
+    }
+    @keyframes slideDown {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .mobile a{ 
+        display:block; 
+        padding: 12px 14px; 
+        border-radius: 12px; 
+        color: var(--muted); 
+        margin-bottom: 4px;
+        font-size: 15px;
+    }
+    .mobile a:hover, .mobile a:active{ background: rgba(255,255,255,.08); color: var(--text); }
+
+    /* Hero */
+    .hero{
+      padding: 42px 0 24px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+    .hero-card{
+      border-radius: var(--radius2);
+      border: 1px solid rgba(255,255,255,.14);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position: relative;
+    }
+    .hero-card .inner{ padding: 36px; }
+    .kicker{
+      display:inline-flex; gap:10px; align-items:center;
+      font-size: 13px; color: var(--muted);
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      margin-bottom: 6px;
+    }
+    .dot{
+      width:8px; height:8px; border-radius: 99px;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(255,211,122,.14);
+    }
+    h1{
+      margin: 16px 0 14px;
+      font-size: clamp(32px, 5vw, 48px); /* 响应式字体 */
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+      text-wrap: balance; /* 平衡换行 */
+    }
+    .lead{
+      margin: 0 0 24px;
+      color: var(--muted);
+      font-size: clamp(15px, 2vw, 17px);
+      line-height: 1.75;
+      max-width: 54ch;
+    }
+    .hero-cta{ display:flex; flex-wrap: wrap; gap: 12px; margin-top: 10px; }
+    .note{
+      margin-top: 20px;
+      color: var(--muted2);
+      font-size: 12.5px;
+      line-height: 1.7;
+    }
+
+    .hero-photo{
+      min-height: 320px;
+      display:flex;
+      flex-direction: column;
+      justify-content:flex-end;
+      padding: 24px;
+      background:
+        linear-gradient(180deg, rgba(7,11,20,.10), rgba(7,11,20,.68) 72%, rgba(7,11,20,.88)),
+        url("https://images.unsplash.com/photo-1476900543704-4312b78632f8?auto=format&fit=crop&w=1400&q=80") center/cover no-repeat;
+    }
+    .hero-photo .caption{
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.28);
+      padding: 14px 18px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    .caption strong{ display:block; font-size: 14px; margin-bottom: 4px; }
+    .caption span{ color: var(--muted); font-size: 13px; line-height: 1.6; }
+
+    /* Section */
+    section{ padding: 32px 0; }
+    .section-head{
+      display:flex; align-items:flex-end; justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .section-head h2{
+      margin:0;
+      font-size: 26px;
+      letter-spacing: .2px;
+    }
+    .section-head p{ margin: 6px 0 0; color: var(--muted); font-size: 15px; line-height: 1.7; max-width: 72ch; }
+
+    .grid-3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .card{
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      box-shadow: 0 12px 40px rgba(0,0,0,.22);
+      padding: 22px;
+      display: flex; flex-direction: column;
+    }
+    .card h3{ margin: 12px 0 8px; font-size: 17px; }
+    .card p{ margin: 0; color: var(--muted); font-size: 14.5px; line-height: 1.75; }
+    .tag{
+      display:inline-flex; align-items:center; gap: 8px;
+      font-size: 12px;
+      color: var(--muted);
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      width: fit-content;
+    }
+
+    .icon{
+      width: 42px; height: 42px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: linear-gradient(135deg, rgba(255,211,122,.18), rgba(122,226,255,.10));
+      display:grid; place-items:center;
+      font-weight: 780;
+      color: rgba(255,255,255,.92);
+      font-size: 18px;
+    }
+
+    /* Story */
+    .story{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 18px;
+    }
+    .story .quote{
+      border-radius: var(--radius2);
+      border: 1px solid rgba(255,255,255,.14);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+      padding: 24px;
+      position: relative;
+      overflow:hidden;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .quote:before{
+      content:"“";
+      position:absolute;
+      top:-10px; left: 16px;
+      font-size: 100px;
+      color: rgba(255,255,255,.08);
+      font-family: Georgia, "Times New Roman", serif;
+      pointer-events: none;
+    }
+    .quote p{
+      margin:0;
+      color: rgba(255,255,255,.92);
+      font-size: 16px;
+      line-height: 1.85;
+      position: relative; z-index: 1;
+    }
+    .quote .by{
+      margin-top: 16px;
+      color: var(--muted2);
+      font-size: 13px;
+      display:flex; flex-wrap: wrap; align-items:center; gap: 10px;
+    }
+    .pill{
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      font-size: 12px;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .photo-card{
+      border-radius: var(--radius2);
+      border: 1px solid rgba(255,255,255,.14);
+      overflow:hidden;
+      background:
+        linear-gradient(180deg, rgba(7,11,20,.05), rgba(7,11,20,.72)),
+        url("https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1400&q=80") center/cover no-repeat;
+      min-height: 260px;
+      display:flex;
+      flex-direction: column;
+      justify-content:flex-end;
+      padding: 16px;
+    }
+    .photo-card .caption{
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.25);
+      padding: 12px;
+      backdrop-filter: blur(10px);
+    }
+
+    /* Projects */
+    .projects{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+    }
+    .project{
+      grid-column: span 6; /* Desktop: 2 columns */
+      border-radius: var(--radius2);
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      overflow:hidden;
+      display: flex; flex-direction: column;
+    }
+    .project .top{
+      padding: 20px 20px 0;
+      display:flex; justify-content: space-between; gap: 12px; align-items:flex-start;
+      flex-grow: 1;
+    }
+    .project h3{ margin:0; font-size: 18px; }
+    .project p{ margin: 8px 0 0; color: var(--muted); font-size: 14.5px; line-height: 1.75; }
+    .project .meta{
+      padding: 16px 20px 20px;
+      display:flex; flex-wrap: wrap; gap: 8px;
+      border-top: 1px solid var(--line);
+      margin-top: 16px;
+    }
+    .project .thumb{
+      height: 180px;
+      background:
+        linear-gradient(180deg, rgba(7,11,20,.10), rgba(7,11,20,.68)),
+        var(--img) center/cover no-repeat;
+    }
+    .link{
+      color: rgba(255,255,255,.88);
+      font-size: 13px;
+      padding: 8px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      display:inline-flex; gap: 6px; align-items:center;
+      cursor:pointer;
+      transition: .2s ease;
+      white-space: nowrap;
+    }
+    .link:hover{ transform: translateY(-1px); background: rgba(255,255,255,.08); }
+    .arrow{ opacity:.8; }
+
+    /* Transparency */
+    .split{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+    ul.clean{
+      margin: 14px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    ul.clean li{
+      padding: 12px 0;
+      border-top: 1px dashed rgba(255,255,255,.14);
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 14.5px;
+    }
+    ul.clean li:first-child{ border-top: none; padding-top: 0; }
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(124,255,178,.28);
+      background: rgba(124,255,178,.08);
+      color: rgba(255,255,255,.88);
+      font-size: 12px;
+    }
+
+    /* Join */
+    .join{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    .form{
+      display:grid;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    label{ font-size: 13px; color: var(--muted); margin-bottom: 4px; display: block; }
+    input, textarea, select{
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      color: var(--text);
+      outline: none;
+      font-size: 15px;
+      transition: border-color .2s;
+    }
+    input:focus, textarea:focus, select:focus{ border-color: var(--accent2); background: rgba(255,255,255,.08); }
+    textarea{ min-height: 120px; resize: vertical; }
+    input::placeholder, textarea::placeholder{ color: rgba(255,255,255,.42); }
+    .form-row{ display:grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .hint{ color: var(--muted2); font-size: 12.5px; line-height: 1.7; margin-top: 8px; }
+
+    /* Footer */
+    footer{
+      border-top: 1px solid var(--line);
+      padding: 36px 0 48px;
+      color: var(--muted);
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns: 1.5fr .5fr .5fr;
+      gap: 24px;
+    }
+    footer a{ color: var(--muted); transition: color .2s; }
+    footer a:hover{ color: var(--text); text-decoration: underline; text-underline-offset: 4px; }
+    .small{ font-size: 13px; color: var(--muted2); line-height: 1.75; }
+
+    /* Modal */
+    .modal-backdrop{
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.65);
+      display:none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 100;
+      backdrop-filter: blur(4px);
+    }
+    .modal{
+      width: min(800px, 100%);
+      max-height: 90vh;
+      display: flex; flex-direction: column;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: #0f1623;
+      box-shadow: 0 30px 120px rgba(0,0,0,.55);
+    }
+    .modal-head{
+      padding: 18px 20px;
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+      gap: 10px;
+    }
+    .modal-head strong{ font-size: 16px; letter-spacing:.2px; }
+    .close{
+      width: 36px; height: 36px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      cursor:pointer;
+      color: var(--text);
+      font-size: 20px;
+      display: grid; place-items: center;
+      transition: background .2s;
+    }
+    .close:hover{ background: rgba(255,255,255,.12); }
+    .modal-body{
+      padding: 24px;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      overflow-y: auto;
+    }
+    .modal-body .box{ padding: 20px; border-radius: 18px; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.05); }
+    .modal-body h4{ margin: 0 0 10px; font-size: 16px; color: var(--accent2); }
+    .modal-body p, .modal-body li{ margin:0; color: var(--muted); font-size: 15px; line-height: 1.75; }
+    .modal-body ul{ margin: 10px 0 0; padding-left: 18px; color: var(--muted); }
+    .modal-foot{
+      padding: 16px 20px;
+      border-top: 1px solid var(--line);
+      display:flex; justify-content: space-between; gap: 10px; align-items:center;
+      color: var(--muted2);
+      font-size: 13px;
+      background: rgba(0,0,0,.1);
+    }
+
+    /* Responsive Adaptation (Key Updates) */
+    
+    /* Tablet (Landscape/Medium screens) */
+    @media (max-width: 1024px){
+      .container{ padding: 0 20px; }
+      .hero-grid{ grid-template-columns: 1fr; gap: 20px; }
+      .hero-card .inner{ padding: 30px; }
+      .hero-photo{ min-height: 280px; }
+      .split{ grid-template-columns: 1fr; }
+      .join{ grid-template-columns: 1fr; }
+      .footer-grid{ grid-template-columns: 1fr 1fr; }
+      .footer-grid > div:first-child { grid-column: span 2; }
+    }
+
+    /* Tablet (Portrait) / Large Mobile */
+    @media (max-width: 860px){
+      nav{ display:none; }
+      .hamburger{ display:grid; place-items:center; }
+      .mobile.open{ display:block; }
+      
+      .grid-3{ grid-template-columns: repeat(2, 1fr); } /* 2 columns on tablet */
+      .project{ grid-column: span 12; } /* Full width projects on smaller tablets */
+      
+      .modal-body{ grid-template-columns: 1fr; }
+      .form-row{ grid-template-columns: 1fr; }
+      .brand{ min-width: unset; }
+    }
+
+    /* Mobile (Small) */
+    @media (max-width: 640px){
+      .container{ padding: 0 16px; }
+      
+      /* Force single column for most grids on phone */
+      .grid-3{ grid-template-columns: 1fr; } 
+      .hero-cta{ flex-direction: column; width: 100%; }
+      .hero-cta .btn{ width: 100%; }
+      
+      .project .top{ flex-direction: column; gap: 8px; }
+      .project .link{ align-self: flex-start; margin-top: 4px; }
+      
+      .footer-grid{ grid-template-columns: 1fr; }
+      .footer-grid > div:first-child { grid-column: span 1; }
+      
+      .modal-foot{ flex-direction: column; align-items: flex-start; gap: 8px; }
+      
+      h1{ margin-top: 10px; }
+      .section-head{ flex-direction: column; align-items: flex-start; gap: 8px; }
+      .section-head h2{ font-size: 22px; }
+    }
+  </style>
 </head>
-<body class="text-gray-700 bg-white">
 
-    <!-- 顶部极简通栏 (Top Bar) -->
-    <div class="bg-gray-900 text-gray-400 text-xs py-2 hidden md:block">
-        <div class="container mx-auto px-6 flex justify-between items-center">
-            <div class="flex space-x-4">
-                <span><i class="fas fa-phone-alt mr-1"></i> 400-888-XXXX (全国服务热线)</span>
-                <span><i class="fas fa-envelope mr-1"></i> service@firefly-tech.com</span>
-            </div>
-            <div class="flex space-x-4">
-                <a href="#" class="hover:text-white transition">投资者关系</a>
-                <span class="border-r border-gray-700"></span>
-                <a href="#" class="hover:text-white transition">企业内网</a>
-                <span class="border-r border-gray-700"></span>
-                <a href="#" class="hover:text-white transition">EN</a>
-            </div>
+<body>
+  <header>
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="#top" aria-label="返回顶部">
+          <div class="logo" aria-hidden="true"></div>
+          <div>
+            <strong>合肥萤火之光有限公司</strong>
+            <span>把微光递出去，照亮一个人的长夜</span>
+          </div>
+        </a>
+
+        <nav aria-label="主导航">
+          <ul>
+            <li><a href="#about">我们是谁</a></li>
+            <li><a href="#projects">重点项目</a></li>
+            <li><a href="#transparency">透明公开</a></li>
+            <li><a href="#join">参与我们</a></li>
+            <li><a href="#stories">新闻与故事</a></li>
+            <li><a href="#contact">联系我们</a></li>
+          </ul>
+        </nav>
+
+        <div class="actions">
+          <button class="btn" id="btnHelp" type="button" title="求助申请入口（示例）">求助申请</button>
+          <button class="hamburger" id="btnMenu" type="button" aria-label="打开菜单"></button>
         </div>
+      </div>
+
+      <div class="mobile" id="mobileNav" aria-label="移动端导航">
+        <a href="#about">我们是谁</a>
+        <a href="#projects">重点项目</a>
+        <a href="#transparency">透明公开</a>
+        <a href="#join">参与我们</a>
+        <a href="#stories">新闻与故事</a>
+        <a href="#contact">联系我们</a>
+      </div>
     </div>
+  </header>
 
-    <!-- 导航栏 (Header) -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
-        <div class="container mx-auto px-6">
-            <div class="flex justify-between items-center h-20">
-                <!-- Logo -->
-                <div class="flex items-center">
-                    <div class="text-3xl font-extrabold text-gray-800 tracking-wide">
-                        <span class="text-firefly-gold"><i class="fas fa-lightbulb"></i> 萤火</span>之光
-                    </div>
-                    <div class="hidden lg:block ml-4 pl-4 border-l border-gray-300 text-xs text-gray-500 uppercase tracking-widest">
-                        Firefly Light Tech
-                    </div>
-                </div>
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-card">
+            <div class="inner">
+              <div class="kicker"><span class="dot" aria-hidden="true"></span> 城市里的微光行动 · 以尊重与透明为底线</div>
+              <h1>不是每个人都能被命运温柔以待。<br/>但我们可以。</h1>
+              <p class="lead">
+                合肥萤火之光有限公司长期关注困境儿童、重大疾病家庭、独居老人及突发困难人群。
+                我们做的不是“轰动”，而是把帮助送到手边，把陪伴放进日常，让一个家庭撑过最黑的那段时间。
+              </p>
 
-                <!-- 菜单 (Menu) -->
-                <div class="hidden md:flex space-x-8 h-full items-center">
-                    <a href="#" class="font-bold text-gray-800 hover:text-firefly-gold h-full flex items-center border-b-2 border-transparent hover:border-firefly-gold transition">首页</a>
-                    
-                    <!-- 下拉菜单示例：走进萤火 -->
-                    <div class="group relative h-full flex items-center">
-                        <a href="#" class="font-medium text-gray-600 hover:text-firefly-gold flex items-center">走进萤火 <i class="fas fa-chevron-down ml-1 text-xs"></i></a>
-                        <div class="hidden group-hover:block absolute top-full left-0 w-48 bg-white shadow-xl py-2 rounded-b-lg border-t-2 border-firefly-gold">
-                            <a href="#about" class="block px-4 py-2 hover:bg-gray-50 hover:text-firefly-gold">集团简介</a>
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-50 hover:text-firefly-gold">董事长致辞</a>
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-50 hover:text-firefly-gold">企业文化</a>
-                        </div>
-                    </div>
+              <div class="hero-cta">
+                <a class="btn primary" href="#projects">查看重点项目</a>
+                <a class="btn" href="#join">成为志愿者</a>
+                <a class="btn" href="#transparency">查看信息公开</a>
+              </div>
 
-                    <!-- 下拉菜单示例：核心业务 -->
-                    <div class="group relative h-full flex items-center">
-                        <a href="#business" class="font-medium text-gray-600 hover:text-firefly-gold flex items-center">产业生态 <i class="fas fa-chevron-down ml-1 text-xs"></i></a>
-                        <div class="hidden group-hover:block absolute top-full left-0 w-56 bg-white shadow-xl py-2 rounded-b-lg border-t-2 border-firefly-gold">
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-50 hover:text-firefly-gold"><i class="fab fa-tiktok mr-2"></i> 抖音直播MCN</a>
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-50 hover:text-firefly-gold"><i class="fas fa-hands-helping mr-2"></i> 智慧互助平台</a>
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-50 hover:text-firefly-gold"><i class="fas fa-seedling mr-2"></i> 乡村振兴项目</a>
-                        </div>
-                    </div>
-
-                    <a href="#charity" class="font-medium text-gray-600 hover:text-firefly-gold transition">公益中心</a>
-                    <a href="#news" class="font-medium text-gray-600 hover:text-firefly-gold transition">新闻动态</a>
-                </div>
-
-                <!-- 右侧按钮 -->
-                <div class="hidden md:flex items-center">
-                    <a href="#contact" class="bg-firefly-gold text-white px-6 py-2 rounded hover:bg-yellow-600 transition shadow-md">
-                        <i class="fas fa-handshake mr-1"></i> 合作咨询
-                    </a>
-                </div>
+              <p class="note">
+                温馨提示：本站为官网示例页面，图片来自网络占位，后期你可替换为机构实拍与正式信息。
+                本页面<strong>不包含捐款/支付功能</strong>。
+              </p>
             </div>
-        </div>
-    </nav>
+          </div>
 
-    <!-- Hero Section (轮播图区域模拟) -->
-    <header class="relative h-[600px] flex items-center overflow-hidden">
-        <!-- 背景图片 -->
-        <div class="absolute inset-0 bg-gray-900">
-            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Tech Background" class="w-full h-full object-cover opacity-40">
-            <div class="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/80 to-transparent"></div>
-        </div>
-        
-        <div class="container mx-auto px-6 relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div>
-                <span class="text-firefly-gold font-bold tracking-widest uppercase mb-4 block">Technology For Good</span>
-                <h1 class="text-5xl md:text-6xl font-bold text-white leading-tight mb-6">
-                    汇聚微光 <br>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">点亮无限希望</span>
-                </h1>
-                <p class="text-gray-300 text-lg mb-8 leading-relaxed">
-                    合肥萤火之光，致力于构建“数字科技+公益直播+社群互助”的创新生态圈。我们用流量连接山海，用技术传递温度，打造中国领先的社会型科技企业。
-                </p>
-                <div class="flex space-x-4">
-                    <a href="#" class="bg-firefly-gold text-white px-8 py-4 rounded font-bold hover:bg-yellow-600 transition shadow-lg transform hover:-translate-y-1">
-                        探索业务体系
-                    </a>
-                    <a href="#" class="border border-gray-400 text-white px-8 py-4 rounded font-bold hover:bg-white hover:text-gray-900 transition">
-                        观看企业宣传片 <i class="fas fa-play ml-2"></i>
-                    </a>
-                </div>
+          <div class="hero-card hero-photo" role="img" aria-label="志愿者关怀活动照片（占位图）">
+            <div class="caption">
+              <strong>一束光不必耀眼</strong>
+              <span>当你愿意停下脚步，很多人的“难”就不再无声。</span>
             </div>
-            <!-- 右侧可以放一个浮动的3D元素或者数据图，这里留空 -->
+          </div>
         </div>
-    </header>
-
-    <!-- 数据驾驶舱 (Stats) -->
-    <section class="bg-gray-100 py-12 border-b border-gray-200">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-gray-300">
-                <div class="p-4">
-                    <div class="text-4xl font-extrabold text-gray-800 mb-2">5,000<span class="text-firefly-gold text-2xl">+</span></div>
-                    <div class="text-gray-500 uppercase text-sm tracking-wide">签约合作达人</div>
-                </div>
-                <div class="p-4">
-                    <div class="text-4xl font-extrabold text-gray-800 mb-2">3.5<span class="text-firefly-gold text-2xl">亿</span></div>
-                    <div class="text-gray-500 uppercase text-sm tracking-wide">累计直播曝光量</div>
-                </div>
-                <div class="p-4">
-                    <div class="text-4xl font-extrabold text-gray-800 mb-2">120<span class="text-firefly-gold text-2xl">万</span></div>
-                    <div class="text-gray-500 uppercase text-sm tracking-wide">互助社群会员</div>
-                </div>
-                <div class="p-4">
-                    <div class="text-4xl font-extrabold text-gray-800 mb-2">100<span class="text-firefly-gold text-2xl">%</span></div>
-                    <div class="text-gray-500 uppercase text-sm tracking-wide">公益账目透明度</div>
-                </div>
-            </div>
-        </div>
+      </div>
     </section>
 
-    <!-- 集团简介 (About - 左右图文布局) -->
-    <section id="about" class="py-24 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col lg:flex-row items-center gap-16">
-                <div class="lg:w-1/2 relative">
-                    <!-- 图片叠加效果 -->
-                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Team" class="rounded-lg shadow-2xl z-10 relative">
-                    <div class="absolute -bottom-10 -right-10 bg-firefly-gold w-64 h-64 rounded-full opacity-20 -z-0"></div>
-                    <div class="absolute -top-10 -left-10 w-32 h-32 border-4 border-gray-100 rounded-lg -z-0"></div>
-                </div>
-                <div class="lg:w-1/2">
-                    <div class="flex items-center mb-6">
-                        <span class="w-12 h-1 bg-firefly-gold mr-4"></span>
-                        <span class="text-gray-500 font-bold uppercase tracking-widest">About Us</span>
-                    </div>
-                    <h2 class="text-4xl font-bold text-gray-900 mb-6">科技向善，<br>做有温度的互联网企业</h2>
-                    <p class="text-gray-600 leading-relaxed mb-6 text-justify">
-                        合肥萤火之光科技有限公司坐落于科教名城合肥，是一家将“商业逻辑”与“社会价值”深度融合的创新型企业。不同于传统互联网公司，我们的每一个代码、每一次直播、每一场活动，都致力于解决社会痛点。
-                    </p>
-                    <p class="text-gray-600 leading-relaxed mb-8 text-justify">
-                        我们构建了以**“抖音数字直播”**为核心的造血机制，反哺**“全民互助社群”**与**“慈善公益项目”**。通过技术手段，让农产品走出大山，让患病家庭获得救助，让爱心流转透明可见。
-                    </p>
-                    
-                    <ul class="grid grid-cols-2 gap-4 mb-8">
-                        <li class="flex items-center text-gray-700 font-medium"><i class="fas fa-check-circle text-firefly-gold mr-3"></i> 5G直播基地</li>
-                        <li class="flex items-center text-gray-700 font-medium"><i class="fas fa-check-circle text-firefly-gold mr-3"></i> 区块链互助系统</li>
-                        <li class="flex items-center text-gray-700 font-medium"><i class="fas fa-check-circle text-firefly-gold mr-3"></i> 乡村振兴合伙人</li>
-                        <li class="flex items-center text-gray-700 font-medium"><i class="fas fa-check-circle text-firefly-gold mr-3"></i> 慈善组织孵化</li>
-                    </ul>
-
-                    <a href="#" class="text-firefly-gold font-bold hover:underline">查看更多企业故事 &rarr;</a>
-                </div>
-            </div>
+    <!-- Values -->
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>我们坚持的三件事</h2>
+            <p>公益不是一句口号，而是每一次核实、每一次回访、每一次把尊重放在前面的选择。</p>
+          </div>
         </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <div class="icon" aria-hidden="true">快</div>
+            <h3>更及时</h3>
+            <p>面对突发困难，我们优先做“能马上落地”的支持：紧急物资、就医交通、临时过渡等，并在后续链接长期资源。</p>
+          </div>
+
+          <div class="card">
+            <div class="icon" aria-hidden="true">真</div>
+            <h3>更透明</h3>
+            <p>公开项目进展与执行记录（脱敏处理）。把每一步怎么做、做到了哪里，写清楚、放出来、经得起追问。</p>
+          </div>
+
+          <div class="card">
+            <div class="icon" aria-hidden="true">久</div>
+            <h3>更长期</h3>
+            <p>我们相信“救急”只是起点。更重要的是陪伴与重建：让一个人重新回到生活轨道，而不是被一次事故定义人生。</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- 核心业务体系 (Business - 卡片式布局) -->
-    <section id="business" class="py-24 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">三大核心业务生态</h2>
-                <p class="text-gray-500 text-lg">构建“造血+输血+活血”的完整闭环，让每一份善意都有迹可循。</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                <!-- 业务 1 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 group">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Live Streaming" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
-                        <div class="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-10 transition"></div>
-                        <div class="absolute top-4 right-4 bg-firefly-gold text-white text-xs px-2 py-1 rounded">MCN矩阵</div>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold mb-3 group-hover:text-firefly-gold transition">抖音直播电商</h3>
-                        <p class="text-gray-600 mb-6 text-sm leading-relaxed">
-                            专注于“正能量”内容赛道。提供品牌全案代运营、达人孵化、乡村振兴助农专场。我们不制造焦虑，只传递美好生活，用流量变现支持公益事业。
-                        </p>
-                        <a href="#" class="inline-block text-gray-800 font-bold hover:text-firefly-gold text-sm border-b-2 border-gray-200 hover:border-firefly-gold transition pb-1">了解合作方案</a>
-                    </div>
-                </div>
-
-                <!-- 业务 2 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 group">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Mutual Aid" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
-                        <div class="absolute top-4 right-4 bg-blue-500 text-white text-xs px-2 py-1 rounded">社群互助</div>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold mb-3 group-hover:text-blue-600 transition">智慧互助平台</h3>
-                        <p class="text-gray-600 mb-6 text-sm leading-relaxed">
-                            基于大数据的网络互助社群。会员预存小额资金，当有人患大病时，由全体会员均摊互助金。全流程区块链存证，第三方公估介入，确保公平公正。
-                        </p>
-                        <a href="#" class="inline-block text-gray-800 font-bold hover:text-blue-600 text-sm border-b-2 border-gray-200 hover:border-blue-600 transition pb-1">查看互助规则</a>
-                    </div>
-                </div>
-
-                <!-- 业务 3 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 group">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Charity" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
-                        <div class="absolute top-4 right-4 bg-red-500 text-white text-xs px-2 py-1 rounded">公益慈善</div>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold mb-3 group-hover:text-red-500 transition">萤火公益计划</h3>
-                        <p class="text-gray-600 mb-6 text-sm leading-relaxed">
-                            联合多家基金会发起的公益项目。关注留守儿童教育、孤寡老人关怀及残障人士就业。我们将直播收益的一部分定向捐赠，并定期组织线下志愿服务。
-                        </p>
-                        <a href="#" class="inline-block text-gray-800 font-bold hover:text-red-500 text-sm border-b-2 border-gray-200 hover:border-red-500 transition pb-1">查看公示信息</a>
-                    </div>
-                </div>
-            </div>
+    <!-- About -->
+    <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>我们是谁</h2>
+            <p>合肥萤火之光有限公司是一家以公益行动为核心方向的机构（示例官网文案），以“尊重、真实、透明、陪伴”为准则开展项目。</p>
+          </div>
+          <span class="badge">隐私保护：所有案例均可脱敏展示</span>
         </div>
-    </section>
 
-    <!-- 公益视差滚动 (CSR) -->
-    <section id="charity" class="parallax py-32 relative" style="background-image: url('https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');">
-        <div class="absolute inset-0 bg-gray-900 opacity-70"></div>
-        <div class="container mx-auto px-6 relative z-10 text-center text-white">
-            <h2 class="text-4xl font-bold mb-6">让每一分钱都花在刀刃上</h2>
-            <p class="text-xl max-w-2xl mx-auto mb-10 text-gray-200">
-                我们承诺：公益项目运营成本由公司单独承担，不从善款中提取管理费。
-                <br>点击下方查看最新的财务审计报告。
+        <div class="split">
+          <div class="card">
+            <span class="tag">使命</span>
+            <h3>把可见、可用、可持续的帮助递到他们手上</h3>
+            <p>
+              在城市与乡村的缝隙里，总有人正在被生活一点点压低声音。
+              我们做的事情很朴素：找到他们，认真核实，组织资源，发放支持，然后回访。
+              直到他们重新抬起头来，能把日子继续过下去。
             </p>
-            <div class="flex justify-center gap-6">
-                <button class="bg-transparent border-2 border-white px-8 py-3 rounded-full hover:bg-white hover:text-gray-900 transition font-bold">2023年度报告</button>
-                <button class="bg-firefly-gold px-8 py-3 rounded-full hover:bg-yellow-600 transition font-bold text-white border-2 border-transparent">我要捐赠</button>
-            </div>
+            <ul class="clean">
+              <li><strong>尊重</strong>：不贴标签、不围观、不消费苦难。</li>
+              <li><strong>真实</strong>：实地核查与材料核验并重，记录留存。</li>
+              <li><strong>透明</strong>：项目过程可追溯，按周期公开。</li>
+              <li><strong>陪伴</strong>：把一次性帮助变成可持续的支持链条。</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <span class="tag">我们相信</span>
+            <h3>善意不必宏大，但一定要抵达</h3>
+            <p>
+              有人来求助时，总会先说一句“我不想麻烦别人”。那不是矫情，是把尊严紧紧攥住的手。
+              我们尽力让求助变得体面：流程清楚、沟通克制、保护隐私、用事实说话。
+            </p>
+            <p style="margin-top:10px;color:var(--muted);">
+              你看到的每一条进展、每一次活动照片、每一个“已回访”，都代表我们把责任放在了第一位。
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- 新闻资讯 (News - 列表布局) -->
-    <section id="news" class="py-24 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="flex justify-between items-end mb-12">
-                <div>
-                    <h2 class="text-3xl font-bold text-gray-900">萤火动态</h2>
-                    <p class="text-gray-500 mt-2">了解我们的最新步伐与行业见解</p>
-                </div>
-                <a href="#" class="text-firefly-gold hover:text-yellow-600 font-medium">查看全部 &rarr;</a>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <!-- 左侧大图新闻 -->
-                <div class="group cursor-pointer">
-                    <div class="overflow-hidden rounded-xl mb-4">
-                        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="News" class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-500">
-                    </div>
-                    <div class="text-sm text-gray-400 mb-2">2023年10月24日 | 公司新闻</div>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-3 group-hover:text-firefly-gold transition">萤火之光启动“暖冬行动”，百位主播接力助农</h3>
-                    <p class="text-gray-600 line-clamp-3">
-                        为解决安徽周边地区冬季农产品滞销问题，合肥萤火之光科技有限公司联合抖音平台，发起了为期一周的“暖冬助农”直播专场活动。活动期间，累计销售红薯、柑橘等农产品...
-                    </p>
-                </div>
-
-                <!-- 右侧新闻列表 -->
-                <div class="space-y-8">
-                    <div class="flex gap-4 group cursor-pointer border-b border-gray-100 pb-6">
-                        <div class="w-24 h-24 flex-shrink-0 bg-gray-200 rounded-lg overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1577563908411-5077b6dc7624?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" class="w-full h-full object-cover">
-                        </div>
-                        <div>
-                            <div class="text-xs text-gray-400 mb-1">2023年09月15日</div>
-                            <h4 class="text-lg font-bold text-gray-800 mb-2 group-hover:text-firefly-gold transition">科技赋能公益：互助平台2.0版本正式上线</h4>
-                            <p class="text-sm text-gray-500 line-clamp-2">全新升级区块链存证技术，让每一笔互助金的流转都可追溯、可查询，进一步提升平台公信力。</p>
-                        </div>
-                    </div>
-
-                    <div class="flex gap-4 group cursor-pointer border-b border-gray-100 pb-6">
-                        <div class="w-24 h-24 flex-shrink-0 bg-gray-200 rounded-lg overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" class="w-full h-full object-cover">
-                        </div>
-                        <div>
-                            <div class="text-xs text-gray-400 mb-1">2023年08月20日</div>
-                            <h4 class="text-lg font-bold text-gray-800 mb-2 group-hover:text-firefly-gold transition">合肥萤火之光荣获“年度社会责任先锋企业”称号</h4>
-                            <p class="text-sm text-gray-500 line-clamp-2">在近日举办的互联网公益峰会上，我司凭借创新的“直播+公益”模式，荣获组委会颁发的大奖。</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex gap-4 group cursor-pointer">
-                        <div class="w-24 h-24 flex-shrink-0 bg-gray-200 rounded-lg overflow-hidden">
-                             <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" class="w-full h-full object-cover">
-                        </div>
-                        <div>
-                            <div class="text-xs text-gray-400 mb-1">2023年07月05日</div>
-                            <h4 class="text-lg font-bold text-gray-800 mb-2 group-hover:text-firefly-gold transition">招募令：寻找100位乡村守护人</h4>
-                            <p class="text-sm text-gray-500 line-clamp-2">我们正在寻找有志于乡村振兴的青年才俊，提供全方位的直播培训与流量扶持。</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Projects -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>重点项目</h2>
+            <p>以下为项目模块示例。你可以后期替换为真实项目名称、覆盖区域、执行团队与数据。</p>
+          </div>
         </div>
+
+        <div class="projects">
+          <article class="project">
+            <div class="thumb" style="--img:url('https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=1400&q=80');" role="img" aria-label="医疗与关怀（占位图）"></div>
+            <div class="top">
+              <div>
+                <h3>萤火急难援助</h3>
+                <p>面向突发疾病、事故、火灾等导致家庭短期失能的情况，提供“过渡期”支持与资源链接，降低二次伤害。</p>
+              </div>
+              <button class="link" type="button" data-modal="project1">了解更多 <span class="arrow">↗</span></button>
+            </div>
+            <div class="meta">
+              <span class="pill">申请-核实-评估-支持-回访</span>
+              <span class="pill">优先紧急个案</span>
+              <span class="pill">保护隐私</span>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="thumb" style="--img:url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1400&q=80');" role="img" aria-label="儿童与教育（占位图）"></div>
+            <div class="top">
+              <div>
+                <h3>萤火护苗计划</h3>
+                <p>为困境儿童提供营养补给、学习用品与心理陪伴。我们更重视长期稳定的关照，而不是“一次就结束”。</p>
+              </div>
+              <button class="link" type="button" data-modal="project2">了解更多 <span class="arrow">↗</span></button>
+            </div>
+            <div class="meta">
+              <span class="pill">营养包 / 学习包</span>
+              <span class="pill">家校联动</span>
+              <span class="pill">持续跟进</span>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="thumb" style="--img:url('https://images.unsplash.com/photo-1516307365426-bea591f05011?auto=format&fit=crop&w=1400&q=80');" role="img" aria-label="老人关怀（占位图）"></div>
+            <div class="top">
+              <div>
+                <h3>银龄守护行动</h3>
+                <p>针对独居、失能/半失能老人，组织探访与关怀服务，协助就医与日常支持，让“有人记得你”成为常态。</p>
+              </div>
+              <button class="link" type="button" data-modal="project3">了解更多 <span class="arrow">↗</span></button>
+            </div>
+            <div class="meta">
+              <span class="pill">探访关怀</span>
+              <span class="pill">就医协助</span>
+              <span class="pill">社区协作</span>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="thumb" style="--img:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=80');" role="img" aria-label="志愿者与陪伴（占位图）"></div>
+            <div class="top">
+              <div>
+                <h3>萤火微光课堂</h3>
+                <p>为困境青少年提供成长陪伴、职业启蒙与心理韧性支持，帮助他们“把未来再想一遍”。</p>
+              </div>
+              <button class="link" type="button" data-modal="project4">了解更多 <span class="arrow">↗</span></button>
+            </div>
+            <div class="meta">
+              <span class="pill">导师志愿者</span>
+              <span class="pill">成长支持</span>
+              <span class="pill">可复制课程</span>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <!-- 联系我们 (Contact - 复杂表单与地图) -->
-    <section id="contact" class="py-24 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row">
-                <!-- 左侧信息 -->
-                <div class="md:w-5/12 bg-gray-900 p-12 text-white flex flex-col justify-between">
-                    <div>
-                        <h3 class="text-3xl font-bold mb-6">联系我们</h3>
-                        <p class="text-gray-400 mb-10">无论是商务合作、公益对接，还是加入我们，欢迎随时联系。</p>
-                        
-                        <div class="space-y-6">
-                            <div class="flex items-start">
-                                <i class="fas fa-map-marker-alt mt-1 mr-4 text-firefly-gold"></i>
-                                <div>
-                                    <h5 class="font-bold text-lg">总部地址</h5>
-                                    <p class="text-gray-400 text-sm">安徽省合肥市高新区XX大道XX号<br>创新产业园A座18层</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <i class="fas fa-phone mt-1 mr-4 text-firefly-gold"></i>
-                                <div>
-                                    <h5 class="font-bold text-lg">联系电话</h5>
-                                    <p class="text-gray-400 text-sm">0551-6666XXXX (总机)<br>186-XXXX-XXXX (商务)</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <i class="fas fa-envelope mt-1 mr-4 text-firefly-gold"></i>
-                                <div>
-                                    <h5 class="font-bold text-lg">电子邮箱</h5>
-                                    <p class="text-gray-400 text-sm">bd@firefly-tech.com</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-12">
-                        <p class="text-sm text-gray-500 mb-4">关注我们的社交媒体</p>
-                        <div class="flex space-x-4">
-                            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-firefly-gold transition"><i class="fab fa-weixin"></i></a>
-                            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-firefly-gold transition"><i class="fab fa-tiktok"></i></a>
-                            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-firefly-gold transition"><i class="fab fa-weibo"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 右侧表单 -->
-                <div class="md:w-7/12 p-12">
-                    <form>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                            <div>
-                                <label class="block text-sm font-bold text-gray-700 mb-2">您的姓名</label>
-                                <input type="text" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded focus:outline-none focus:border-firefly-gold transition">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-bold text-gray-700 mb-2">联系电话</label>
-                                <input type="text" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded focus:outline-none focus:border-firefly-gold transition">
-                            </div>
-                        </div>
-                        <div class="mb-6">
-                            <label class="block text-sm font-bold text-gray-700 mb-2">合作类型</label>
-                            <select class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded focus:outline-none focus:border-firefly-gold transition">
-                                <option>直播带货合作</option>
-                                <option>公益项目对接</option>
-                                <option>申请加入互助</option>
-                                <option>应聘求职</option>
-                                <option>其他</option>
-                            </select>
-                        </div>
-                        <div class="mb-6">
-                            <label class="block text-sm font-bold text-gray-700 mb-2">留言内容</label>
-                            <textarea rows="4" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded focus:outline-none focus:border-firefly-gold transition"></textarea>
-                        </div>
-                        <button class="w-full bg-gray-900 text-white font-bold py-4 rounded hover:bg-gray-800 transition shadow-lg">发送信息</button>
-                    </form>
-                </div>
-            </div>
+    <!-- Transparency -->
+    <section id="transparency">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>透明公开</h2>
+            <p>把“做了什么、怎么做、做到哪里”说清楚。你可以把这里接到真实的PDF/公告页面。</p>
+          </div>
         </div>
+
+        <div class="split">
+          <div class="card">
+            <span class="tag">公开内容</span>
+            <h3>我们会定期公开这些信息</h3>
+            <ul class="clean">
+              <li>项目进展：覆盖范围、执行次数、受益概况（脱敏）。</li>
+              <li>物资记录：采购清单、发放签收、照片与回访说明（脱敏）。</li>
+              <li>个案流程：申请-核实-评估-支持-回访的节点记录（脱敏）。</li>
+              <li>制度文件：志愿者规范、隐私保护原则、反诈提醒等。</li>
+            </ul>
+            <p class="hint" style="margin-top:10px;">
+              你可以新增“月度报告/年度报告”链接到你自己的文件地址（如 /reports/2025-01.pdf）。
+            </p>
+          </div>
+
+          <div class="card">
+            <span class="tag">隐私保护</span>
+            <h3>我们不展示“可识别的苦难”</h3>
+            <p>
+              我们会尽力做到：不公开姓名、住址、身份证号、面部特征等可识别信息。
+              公开内容以“可核对的事实”和“可追溯的流程”为核心。
+            </p>
+            <ul class="clean">
+              <li>公开照片优先使用背影、现场细节、物资/环境等方式呈现。</li>
+              <li>文字叙述避免具体可定位的个人信息。</li>
+              <li>如需对外传播案例，须获得授权并遵守最小披露原则。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- 页脚 (Footer - 多列复杂结构) -->
-    <footer class="bg-gray-900 text-white border-t border-gray-800 pt-16 pb-8">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-                <!-- 列1：品牌 -->
-                <div>
-                    <h4 class="text-2xl font-bold mb-6 text-firefly-gold"><i class="fas fa-lightbulb"></i> 萤火之光</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
-                        致力成为中国最具温度的科技公司。用技术链接善意，用直播点亮希望。
-                    </p>
-                    <div class="text-xs text-gray-500">
-                        &copy; 2023 Hefei Firefly Light Tech Co., Ltd. <br>All Rights Reserved.
-                    </div>
-                </div>
-                
-                <!-- 列2：快速链接 -->
-                <div>
-                    <h5 class="text-lg font-bold mb-6">快速链接</h5>
-                    <ul class="space-y-3 text-gray-400 text-sm">
-                        <li><a href="#" class="hover:text-firefly-gold transition">关于集团</a></li>
-                        <li><a href="#" class="hover:text-firefly-gold transition">直播生态</a></li>
-                        <li><a href="#" class="hover:text-firefly-gold transition">互助公示</a></li>
-                        <li><a href="#" class="hover:text-firefly-gold transition">新闻中心</a></li>
-                        <li><a href="#" class="hover:text-firefly-gold transition">诚聘英才</a></li>
-                    </ul>
-                </div>
-
-                <!-- 列3：法律条款 -->
-                <div>
-                    <h5 class="text-lg font-bold mb-6">合规与隐私</h5>
-                    <ul class="space-y-3 text-gray-400 text-sm">
-                        <li><a href="#" class="hover:text-firefly-gold transition">用户服务协议</a></li>
-                        <li><a href="#" class="hover:text-firefly-gold transition">隐私保护政策</a></li>
-                        <li><a href="#" class="hover:text-firefly-gold transition">互助计划公约</a></li>
-                        <li><a href="#" class="hover:text-firefly-gold transition">慈善募捐资质公示</a></li>
-                        <li><a href="#" class="hover:text-firefly-gold transition">营业执照</a></li>
-                    </ul>
-                </div>
-
-                <!-- 列4：二维码 -->
-                <div>
-                    <h5 class="text-lg font-bold mb-6">关注我们</h5>
-                    <div class="flex gap-4">
-                        <div class="text-center">
-                            <div class="w-24 h-24 bg-white rounded p-1 mb-2">
-                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=Douyin" alt="抖音二维码" class="w-full h-full">
-                            </div>
-                            <span class="text-xs text-gray-400">官方抖音号</span>
-                        </div>
-                        <div class="text-center">
-                            <div class="w-24 h-24 bg-white rounded p-1 mb-2">
-                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=WeChat" alt="公众号二维码" class="w-full h-full">
-                            </div>
-                            <span class="text-xs text-gray-400">官方公众号</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="border-t border-gray-800 pt-8 text-center text-xs text-gray-500">
-                <p>皖ICP备XXXXXXXX号-1 | 皖公网安备 XXXXXXXXXXXXXX号</p>
-            </div>
+    <!-- Stories -->
+    <section id="stories">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>新闻与故事</h2>
+            <p>这里放项目动态与真实记录（建议用“纪实”而非“煽情”）。下方为可替换示例。</p>
+          </div>
         </div>
-    </footer>
 
+        <div class="story">
+          <div class="quote">
+            <p>
+              他第一次来求助时，把病历攥得发皱，反复说“我不想麻烦别人”。
+              我们听见的不是要求，而是一个家庭在尽力体面地撑着。
+              当支持抵达后，孩子在电话那头轻声说：<strong>“谢谢你们，我爸终于能继续治疗了。”</strong><br/><br/>
+              那一刻我们明白，公益不是把人推上舞台，而是在他们最难的时候，让他们还能继续做回普通人。
+            </p>
+            <div class="by">
+              <span class="pill">记录：志愿者工作日志</span>
+              <span class="pill">内容示例，可替换</span>
+            </div>
+          </div>
+
+          <div class="photo-card" role="img" aria-label="活动现场（占位图）">
+            <div class="caption">
+              <strong>项目动态（示例）</strong>
+              <span>本月完成社区探访与关怀包发放，建立回访档案与后续跟进计划。</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:14px" class="grid-3">
+          <div class="card">
+            <span class="tag">动态</span>
+            <h3>护苗计划 · 校园补给</h3>
+            <p>为困境儿童补齐学习用品与营养补给，联动老师与监护人，建立长期跟进清单。</p>
+          </div>
+          <div class="card">
+            <span class="tag">纪实</span>
+            <h3>一次探访，听见沉默</h3>
+            <p>很多人不是不想说，而是不知道从哪里开始。我们做的是先坐下来，先听完。</p>
+          </div>
+          <div class="card">
+            <span class="tag">制度</span>
+            <h3>志愿者守则更新</h3>
+            <p>新增隐私保护与反诈提醒条款，确保每一次行动都更安全、更可靠。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Join -->
+    <section id="join">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>参与我们</h2>
+            <p>不需要很厉害的人。需要的是愿意认真对待每一次承诺的人。</p>
+          </div>
+        </div>
+
+        <div class="join">
+          <div class="card">
+            <span class="tag">成为志愿者</span>
+            <h3>把一段时间，变成一束光</h3>
+            <p>
+              你可以选择：探访陪伴、活动执行、物资分拣、摄影记录、文案编辑、线上客服协助等。
+              你做的每一件小事，都会让“帮助”更快更稳地抵达。
+            </p>
+
+            <form class="form" id="volForm">
+              <div class="form-row">
+                <div>
+                  <label for="name">姓名</label>
+                  <input id="name" name="name" placeholder="如：张三" autocomplete="name" />
+                </div>
+                <div>
+                  <label for="phone">手机</label>
+                  <input id="phone" name="phone" placeholder="如：13800000000" autocomplete="tel" />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div>
+                  <label for="role">意向方向</label>
+                  <select id="role" name="role">
+                    <option value="探访陪伴">探访陪伴</option>
+                    <option value="活动执行">活动执行</option>
+                    <option value="物资分拣">物资分拣</option>
+                    <option value="摄影记录">摄影记录</option>
+                    <option value="文案编辑">文案编辑</option>
+                    <option value="其他">其他</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="city">所在区域</label>
+                  <input id="city" name="city" placeholder="如：合肥·蜀山区" />
+                </div>
+              </div>
+
+              <div>
+                <label for="msg">想对我们说的话</label>
+                <textarea id="msg" name="msg" placeholder="例如：每周可参与一次；擅长与孩子沟通；可协助拍摄与整理资料……"></textarea>
+              </div>
+
+              <button class="btn primary" type="submit">提交报名（示例）</button>
+              <p class="hint">
+                本表单为前端演示：点击提交会生成一段可复制的信息，不会自动发送到服务器。
+                你上线时可对接后端接口或表单工具。
+              </p>
+            </form>
+          </div>
+
+          <div class="card" id="help">
+            <span class="tag">我也需要帮助</span>
+            <h3>请放心开口，我们会认真对待</h3>
+            <p>
+              如果你或家人正在经历突发困难，可以在此留下基本情况。
+              我们会按流程进行核实与评估，并尽力提供可落地的支持或资源转介。
+            </p>
+
+            <form class="form" id="helpForm">
+              <div class="form-row">
+                <div>
+                  <label for="hname">联系人</label>
+                  <input id="hname" name="hname" placeholder="如：李女士" />
+                </div>
+                <div>
+                  <label for="hphone">联系电话</label>
+                  <input id="hphone" name="hphone" placeholder="如：13800000000" />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div>
+                  <label for="htype">困难类型</label>
+                  <select id="htype" name="htype">
+                    <option value="大病/意外">大病/意外</option>
+                    <option value="困境儿童">困境儿童</option>
+                    <option value="老人照护">老人照护</option>
+                    <option value="其他">其他</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="hurge">紧急程度</label>
+                  <select id="hurge" name="hurge">
+                    <option value="一般">一般</option>
+                    <option value="较紧急（7天内）">较紧急（7天内）</option>
+                    <option value="紧急（48小时内）">紧急（48小时内）</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label for="hdesc">情况说明</label>
+                <textarea id="hdesc" name="hdesc" placeholder="请尽量说明：发生了什么、目前最困难的点、是否已就医/报警/求助社区、可提供的证明材料（病历/证明/照片等）"></textarea>
+              </div>
+
+              <button class="btn primary" type="submit">提交申请（示例）</button>
+              <p class="hint">
+                反诈提醒：我们不会通过私聊要求你转账或提供验证码。请以官网公布联系方式为准。
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>联系我们</h2>
+            <p>把这里替换为你公司的真实地址、电话、邮箱、公众号与备案信息即可。</p>
+          </div>
+        </div>
+
+        <div class="split">
+          <div class="card">
+            <h3>合肥萤火之光有限公司</h3>
+            <ul class="clean">
+              <li><strong>地址：</strong>合肥市（请填写详细地址）</li>
+              <li><strong>电话：</strong>（请填写）</li>
+              <li><strong>邮箱：</strong>（请填写）</li>
+              <li><strong>工作时间：</strong>周一至周五 9:00-18:00</li>
+              <li><strong>微信公众号/视频号：</strong>合肥萤火之光（请填写/替换）</li>
+            </ul>
+            <p class="hint" style="margin-top:10px;">
+              建议增加：对外合作邮箱、媒体联系、志愿者群入口（二维码图片可后续替换）。
+            </p>
+          </div>
+
+          <div class="card">
+            <span class="tag">在线留言</span>
+            <h3>我们会读完每一条</h3>
+            <form class="form" id="msgForm">
+              <div class="form-row">
+                <div>
+                  <label for="mname">姓名</label>
+                  <input id="mname" name="mname" placeholder="如：王先生" />
+                </div>
+                <div>
+                  <label for="mcontact">联系方式</label>
+                  <input id="mcontact" name="mcontact" placeholder="电话/邮箱均可" />
+                </div>
+              </div>
+              <div>
+                <label for="mcontent">留言内容</label>
+                <textarea id="mcontent" name="mcontent" placeholder="合作/咨询/建议/媒体联络…"></textarea>
+              </div>
+              <button class="btn" type="submit">提交留言（示例）</button>
+              <p class="hint">本留言为前端演示，不会自动发送到服务器。</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div style="display:flex; align-items:center; gap:10px;">
+            <div class="logo" aria-hidden="true"></div>
+            <div>
+              <div style="font-weight:760;color:rgba(255,255,255,.92);">合肥萤火之光有限公司</div>
+              <div class="small">把微光递出去，照亮一个人的长夜</div>
+            </div>
+          </div>
+          <p class="small" style="margin-top:10px;">
+            本站不提供捐款/支付功能。若后续需要接入捐赠，请通过正规平台与合规流程，并在“透明公开”中同步披露。
+          </p>
+          <p class="small">
+            图片来源：Unsplash（占位图，可替换）。建议上线前替换为机构自有素材，以免版权/合规风险。
+          </p>
+        </div>
+
+        <div>
+          <div style="font-weight:700;margin-bottom:8px;color:rgba(255,255,255,.88);">快速导航</div>
+          <div class="small" style="display:grid; gap:8px;">
+            <a href="#about">我们是谁</a>
+            <a href="#projects">重点项目</a>
+            <a href="#transparency">透明公开</a>
+            <a href="#join">参与我们</a>
+          </div>
+        </div>
+
+        <div>
+          <div style="font-weight:700;margin-bottom:8px;color:rgba(255,255,255,.88);">合规与提醒</div>
+          <div class="small" style="display:grid; gap:8px;">
+            <a href="#transparency">隐私保护原则</a>
+            <a href="#contact">反诈提醒</a>
+            <a href="#contact">联系我们</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="small" style="margin-top:16px; padding-top:14px; border-top: 1px solid var(--line);">
+        © <span id="year"></span> 合肥萤火之光有限公司 保留所有权利 ｜ 隐私政策（待补充）｜ 备案信息（待补充）
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-label="项目详情弹窗">
+    <div class="modal">
+      <div class="modal-head">
+        <strong id="modalTitle">项目详情</strong>
+        <button class="close" id="modalClose" type="button" aria-label="关闭">×</button>
+      </div>
+      <div class="modal-body">
+        <div class="box">
+          <h4>项目说明</h4>
+          <p id="modalDesc">—</p>
+        </div>
+        <div class="box">
+          <h4>执行方式</h4>
+          <ul id="modalList"></ul>
+        </div>
+      </div>
+      <div class="modal-foot">
+        <span>提示：此内容为示例，可替换为真实流程与制度文件链接。</span>
+        <span>合肥萤火之光有限公司</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu
+    const btnMenu = document.getElementById('btnMenu');
+    const mobileNav = document.getElementById('mobileNav');
+    btnMenu.addEventListener('click', () => {
+      mobileNav.classList.toggle('open');
+    });
+    mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      mobileNav.classList.remove('open');
+    }));
+
+    // Scroll to help form
+    document.getElementById('btnHelp').addEventListener('click', () => {
+      const el = document.getElementById('help');
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    // Modal data
+    const projectData = {
+      project1: {
+        title: "萤火急难援助",
+        desc: "面向突发困难个案，提供过渡期支持与资源转介。我们的目标是让帮助更快抵达、更稳落地，并尽量减少当事人被打扰与被围观。",
+        list: [
+          "受理：线上/线下提交基本情况（可脱敏）",
+          "核实：材料核验 + 走访/电话核实（视情况）",
+          "评估：明确需求优先级与支持边界",
+          "执行：物资/服务支持 + 资源链接",
+          "回访：记录效果与后续需求，形成闭环"
+        ]
+      },
+      project2: {
+        title: "萤火护苗计划",
+        desc: "为困境儿童提供营养、学习与陪伴支持。我们更关注“持续性”，把一次性帮助变成稳定的成长支持。",
+        list: [
+          "建立儿童关怀档案（脱敏）",
+          "营养包/学习用品发放与签收",
+          "与家校沟通，识别长期缺口",
+          "志愿者陪伴活动与心理关怀转介",
+          "阶段回访与总结复盘"
+        ]
+      },
+      project3: {
+        title: "银龄守护行动",
+        desc: "关注独居与失能老人，提供探访、关怀与就医协助。让老人知道：有人记得你，有人愿意为你多走一步。",
+        list: [
+          "社区/家属推荐与登记（脱敏）",
+          "定期探访与基础关怀包",
+          "就医陪同与转介（视资源情况）",
+          "安全与反诈宣导",
+          "回访记录与风险提示"
+        ]
+      },
+      project4: {
+        title: "萤火微光课堂",
+        desc: "为困境青少年提供成长陪伴与能力支持，帮助他们在不确定里重建方向感与自我效能感。",
+        list: [
+          "课程：职业启蒙/学习方法/心理韧性",
+          "导师：志愿导师结对（可阶段性）",
+          "活动：城市融入与公共资源参访",
+          "产出：可复制课程包与课堂记录",
+          "评估：阶段反馈与后续建议"
+        ]
+      }
+    };
+
+    const backdrop = document.getElementById('modalBackdrop');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDesc = document.getElementById('modalDesc');
+    const modalList = document.getElementById('modalList');
+    const modalClose = document.getElementById('modalClose');
+
+    function openModal(key){
+      const data = projectData[key];
+      if(!data) return;
+
+      modalTitle.textContent = data.title;
+      modalDesc.textContent = data.desc;
+
+      modalList.innerHTML = "";
+      data.list.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        modalList.appendChild(li);
+      });
+
+      backdrop.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal(){
+      backdrop.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('[data-modal]').forEach(btn => {
+      btn.addEventListener('click', () => openModal(btn.dataset.modal));
+    });
+    modalClose.addEventListener('click', closeModal);
+    backdrop.addEventListener('click', (e) => {
+      if(e.target === backdrop) closeModal();
+    });
+    window.addEventListener('keydown', (e) => {
+      if(e.key === 'Escape') closeModal();
+    });
+
+    // Demo forms: copy-to-clipboard
+    function handleDemoForm(formId, title){
+      const form = document.getElementById(formId);
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const fd = new FormData(form);
+        const lines = [];
+        for (const [k,v] of fd.entries()){
+          lines.push(`${k}: ${String(v).trim()}`);
+        }
+        const text = `${title}\n` + lines.join('\n');
+
+        try{
+          await navigator.clipboard.writeText(text);
+          alert("已复制到剪贴板（演示）。你可以粘贴到微信/邮件发送给机构。\n\n" + text);
+        }catch(err){
+          alert("无法自动复制（可能浏览器限制）。请手动复制以下内容：\n\n" + text);
+        }
+        form.reset();
+      });
+    }
+    handleDemoForm('volForm', '【志愿者报名】');
+    handleDemoForm('helpForm', '【求助申请】');
+    handleDemoForm('msgForm', '【网站留言】');
+  </script>
 </body>
 </html>
